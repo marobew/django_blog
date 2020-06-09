@@ -7,11 +7,11 @@ header {
   align-items: center;
   justify-content: center;
   height: 16vh;
-  background-color: rgb(135, 206, 235);
+  background-color: #AAABD3;
 }
 
 header > p {
-  color: white;
+  color: #353866;
   font-size: 88px;
   opacity: 0.7;
   font-weight: bold;
@@ -24,7 +24,7 @@ header > p {
 }
 /* 네비게이터 바 */
 .navbar{
-  background-color: rgb(255, 192, 203);
+  background-color: #CBA6C3;
 }
 /* 바디 시작 */
 .body-wrapper{
@@ -38,11 +38,10 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
   height: 73vh;
   width: 30%;
   max-width: 400;
-  background-color: rgb(211, 211, 211);
+  background-color: #353866;
 }
 /* 사이드바 버튼 */
 .button {
@@ -54,18 +53,17 @@ aside {
   font-size: 2vw;
 }
 /* 사이드바 사진 삽입 */
-.profile {
+.profile img{
   width: 10vw;
   height: 10vw;
   background-color: black;
 }
-/* 사이드바 컨텐츠 */
 .user-items {
   margin-top: 8px;
   width: 60%;
   word-break: break-all;
   text-align: center;
-  color: black;
+  color: #F8FAFF;
 }
 /* 사이드바 이름 */
 .user-items:nth-child(3){
@@ -104,12 +102,12 @@ section > div > div > div {
 /* 섹션 컨텐츠 */
 .title{
   text-align: center;
-  font-size: 54px;
+  font-size: 40px;
   display:inline;
 }
 
 #title-indent {
-  height:40px;
+  height:30px;
   width:5px;
   background-color: darkgray;
   display:inline-block;
@@ -132,12 +130,12 @@ section > div > div > div {
 }
 
 .content {
-  font-size: 40px;
+  font-size: 25px;
   margin-top:30px
 }
 /* 푸터 스타일 */
 footer {
-  background-color: rgb(240, 128, 128);
+  background-color: #CBA6C3;
   height: 5vh;
   width: 100%;
   display:flex;

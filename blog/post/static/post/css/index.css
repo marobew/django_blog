@@ -2,7 +2,7 @@ html {
   overflow: hidden;
   height: 100%;
 }
-/* 헤더 구역 */
+/* header */
 .header .header_title {
   display: flex !important;
   align-items: center;
@@ -10,30 +10,15 @@ html {
   height:18vh;
   background-color: #AAABD3;
 }
-header {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  height: 16vh;
-  background-color: #AAABD3;
-}
-
-header > p {
-  color: #353866;
-  font-size: 88px;
-  opacity: 0.7;
-  font-weight: bold;
-}
-
 @media (max-width: 960px) {
   header > p {
     font-size: 9vw;
   }
 }
-/* 네비게이터 바 */
-.navbar{
+.header_menu .navbar{
   background-color: #CBA6C3;
 }
+
 /* 바디 시작 */
 .body-wrapper{
   display:flex;

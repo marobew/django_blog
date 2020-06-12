@@ -23,90 +23,100 @@
 </head>
 
 <body>
-  <!-- 헤더 컨텐츠 -->
-  <header>
-    <p>Boram We😎</p>
-  </header>
-  <!-- 네비게이션 바 부트스트랩 -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">Blog</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Posts<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Me</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Follow
-          </a>
-          <!-- 드랍다운 메뉴 -->
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Github</a>
-            <a class="dropdown-item" href="#">Instagram</a>
-            <a class="dropdown-item" href="#">Facebook</a>
+  <div id="wrap">
+    <div id="header">
+      <div class="header">
+        <div class="header_title">
+          <h1>Boram's Blog</h1>
+        </div>
+        <!-- //headr_title -->
+        <div class="header_menu">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+            <a class="navbar-brand" href="#">Blog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Posts<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Me</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Follow
+                  </a>
+                  <!-- 드랍다운 메뉴 -->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Github</a>
+                    <a class="dropdown-item" href="#">Instagram</a>
+                    <a class="dropdown-item" href="#">Facebook</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="id" placeholder="아이디" aria-label="ID">
+                <input class="form-control mr-sm-2" type="id" placeholder="비밀번호" aria-label="PASSWORD">
+                <button class="btn my-2 my-sm-0" type="submit">Login</button>
+              </form>
+            </div>
           </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="id" placeholder="아이디" aria-label="ID">
-        <input class="form-control mr-sm-2" type="id" placeholder="비밀번호" aria-label="PASSWORD">
-        <button class="btn my-2 my-sm-0" type="submit">Login</button>
-      </form>
+          </nav>
+        </div>
+        <!-- //headr_menu -->
+      </div>
     </div>
-  </nav>
-  <!-- 바디 컨텐츠를 묶어주는 역할 -->
-  <div class="body-wrapper">
-    <!-- 사이드 컨텐츠 -->
-    <aside>
-      <div class="button">◀</div>
-      <div class="profile"><img src={% static 'post/img/user.jpg' %}></div>
-      <div class="user-items">위보람</div>
-      <div class="user-items">💻 github: marobew</div>
-      <div class="user-items">🦁 boramm@likelion.org</div>
-      <div class="user-items">📚 Computer Science at SYU</div>
-      <div class="user-items">🎂 97년 3월 31일</div>
-      <div class="user-items">📱 010-6481-6506</div>
-      <div class="user-items">🐈 ISFP</div>
-    </aside>
-    <!-- 섹터 컨텐츠 -->
-    <section>
-    {% for post in posts.all %}
-      <div>
+    <!-- //header -->
+    <!-- 바디 컨텐츠를 묶어주는 역할 -->
+    <div class="body-wrapper">
+      <!-- 사이드 컨텐츠 -->
+      <aside>
+        <div class="button">◀</div>
+        <div class="profile"><img src={% static 'post/img/user.jpg' %}></div>
+        <div class="user-items">위보람</div>
+        <div class="user-items">💻 github: marobew</div>
+        <div class="user-items">🦁 boramm@likelion.org</div>
+        <div class="user-items">📚 Computer Science at SYU</div>
+        <div class="user-items">🎂 97년 3월 31일</div>
+        <div class="user-items">📱 010-6481-6506</div>
+        <div class="user-items">🐈 ISFP</div>
+      </aside>
+      <!-- 섹터 컨텐츠 -->
+      <section>
+      {% for post in posts.all %}
         <div>
           <div>
-            <div class="title">
-              <div id="title-indent"></div>
-              {{ post.title }}
+            <div>
+              <div class="title">
+                <div id="title-indent"></div>
+                {{ post.title }}
+              </div>
+              <div class="date-wrapper">
+                <div>updated at: {{ post.updated_at }}</div>
+                <div>created at: {{ post.created_at }}</div>
+              </div>
+              <div class="divider"></div>
+              <img src="{{ post.img.url }}" style="width: 40%; margin:10px auto;">
+              <div class="content">{{ post.body }}</div>
             </div>
-            <div class="date-wrapper">
-              <div>updated at: {{ post.updated_at }}</div>
-              <div>created at: {{ post.created_at }}</div>
-            </div>
-            <div class="divider"></div>
-            <img src="{{ post.img.url }}" style="width: 40%; margin:10px auto;">
-            <div class="content">{{ post.body }}</div>
           </div>
         </div>
-      </div>
-      <br>
-    {% endfor %}
-    </section>
-  </div>
-  <!-- 맨아래 푸터 컨텐츠 -->
-  <footer>
-    <div class="footer-items">
-      powered by Boram We
+        <br>
+      {% endfor %}
+      </section>
     </div>
-  </footer>
-
+    <!-- 맨아래 푸터 컨텐츠 -->
+    <footer>
+      <div class="footer-items">
+        powered by Boram We
+      </div>
+    </footer>
+  </div>
 
   <!-- 이하는 건들지 말것!! -->
   <script>

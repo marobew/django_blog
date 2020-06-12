@@ -3,6 +3,13 @@ html {
   height: 100%;
 }
 /* 헤더 구역 */
+.header .header_title {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height:18vh;
+  background-color: #AAABD3;
+}
 header {
   display: flex !important;
   align-items: center;
@@ -99,7 +106,7 @@ section > div > div > div {
 /* 섹션 컨텐츠 */
 .title{
   text-align: center;
-  font-size: 50vm;
+  font-size: ;
   display:inline;
 }
 

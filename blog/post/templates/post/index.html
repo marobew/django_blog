@@ -19,7 +19,7 @@
     crossorigin="anonymous"></script>
   <!-- css 가져오기 -->
   <link rel="stylesheet" href="{% static 'post/css/index.css' %}">
-  <title>타이틀을 입력</title>
+  <title>Boram</title>
 </head>
 
 <body>
@@ -58,7 +58,7 @@
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="id" placeholder="아이디" aria-label="ID">
         <input class="form-control mr-sm-2" type="id" placeholder="비밀번호" aria-label="PASSWORD">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+        <button class="btn my-2 my-sm-0" type="submit">Login</button>
       </form>
     </div>
   </nav>
@@ -78,22 +78,26 @@
     </aside>
     <!-- 섹터 컨텐츠 -->
     <section>
+    {% for post in posts.all %}
       <div>
         <div>
           <div>
             <div class="title">
               <div id="title-indent"></div>
-              위보람의 동생은 아래보람
+              {{ post.title }}
             </div>
             <div class="date-wrapper">
-              <div>updated at: 2020-06-10 1:50</div>
-              <div>created at: 2020-06-10 1:50</div>
+              <div>updated at: {{ post.updated_at }}</div>
+              <div>created at: {{ post.created_at }}</div>
             </div>
             <div class="divider"></div>
-            <div class="content">나는 코로나 바이러스가 싫어</div>
+            <img src="{{ post.img.url }}" style="width: 40%; margin:10px auto;">
+            <div class="content">{{ post.body }}</div>
           </div>
         </div>
       </div>
+      <br>
+    {% endfor %}
     </section>
   </div>
   <!-- 맨아래 푸터 컨텐츠 -->
@@ -113,11 +117,7 @@
 
     860 > innerWidth ? $aside.setAttribute("style", "display:none !important") : null;
     860 > innerWidth ? $section.classList.add("act") : $section.classList.remove("act");
-    600 > innerWidth ? $contents.style.width = "100vw" : $contents.style.width = "60%"
-    600 > innerWidth ? $contents.style.minWidth = "" : $contents.style.minWidth = "600px"
 
-    window.addEventListener("resize", () => { if (860 > innerWidth) 600 > innerWidth ? $contents.style.minWidth = "" : $contents.style.minWidth = "600px" });
-    window.addEventListener("resize", () => { if (860 > innerWidth) 600 > innerWidth ? $contents.style.width = "100vw" : $contents.style.width = "60%" });
     window.addEventListener("resize", contentsMover);
     function contentsMover(e) {
       if (innerWidth < 860) {

@@ -123,10 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# 이곳에 스태틱 파일 루트 폴더 경로 지정
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# post 앱의 static 폴더 경로 지정
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'post', 'static'),
-]
+# 프로젝트 내 media 파일들이 저장되는 실제 위치
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+# 홈페이지/media/filename과 같이 url이 설계됨
+MEDIA_URL = '/media/'
